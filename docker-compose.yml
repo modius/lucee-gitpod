@@ -1,0 +1,19 @@
+services:
+  lucee:
+    # when you get a local Dockerfile going you can build it here
+    # build: .
+    image: lucee/lucee:5.3-nginx
+    environment:
+      # ENV goes here
+      - HELLO=I am Legion
+    volumes:
+      # nginx web root volume
+      - /workspace/lucee-gitpod/www:/var/www
+      # lucee-web.xml.cfm
+      # - /workspace/lucee-gitpod/conf/lucee-web.xml.cfm:/opt/lucee/web/lucee-web.xml.cfm
+      # lucee logs
+      # /workspace/lucee-gitpod/logs/lucee:/opt/lucee/web/logs
+      # - /workspace/lucee-gitpod/logs/supervisor:/var/log/supervisor
+      # - /workspace/lucee-gitpod/logs/tomcat:/usr/local/tomcat/logs
+    ports:
+      - "8080:80"

@@ -3,7 +3,8 @@
 
 <code>
     docker run -p 80:80 --name nginx nginx
-    docker run -it --rm -d -p 8080:80 --name lucee lucee/lucee:5.3-nginx
+    docker run -it --rm -d -p 8080:80 --name lucee -v /workspace/lucee-gitpod/www:/var/www lucee/lucee:5.3-nginx
+    -v /workspace/lucee-gitpod/www:/var/www 
 
     docker exec -it lucee bash
     docker run -p 8080:8080 --name lucee lucee/lucee:latest 
